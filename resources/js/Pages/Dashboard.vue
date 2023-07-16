@@ -2,25 +2,28 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 
 import { Head } from '@inertiajs/vue3';
-import HelloWorld from "@/Components/HelloWorld.vue";
+import Navbar from "@/Components/Navbar/Navbar.vue";
+import Container from "@/Components/Container.vue";
+import Logo from "@/Components/Navbar/Logo.vue";
+import Search from "@/Components/Navbar/Search.vue";
+import UserMenu from "@/Components/Navbar/UserMenu.vue";
 </script>
 
 <template>
     <Head title="Dashboard" />
 
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>
-        </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">You're logged in!</div>
-                </div>
+<!--    <AuthenticatedLayout>-->
+        <div class="fixed w-full bg-white z-10 shadow-sm">
+            <div class="py-4 border-b-[1px]">
+                <Container>
+                    <div class="flex flex-row items-center justify-between gap-3 md:gap-0">
+                        <Logo />
+                        <Search />
+                        <UserMenu />
+                    </div>
+                </Container>
             </div>
         </div>
-        <HelloWorld>dddddd</HelloWorld>
-    </AuthenticatedLayout>
+<!--    </AuthenticatedLayout>-->
 
 </template>
